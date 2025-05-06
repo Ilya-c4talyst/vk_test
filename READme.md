@@ -1,7 +1,22 @@
 <h1>gRPC-сервис для обмена сообщениями по принципу Publisher-Subscriber с использованием собственной реализации шины событий.</h1>
 
-<h2>Требования</h2>
+<h2>Архитектура</h2>
+.<br>
+│ api/<br>
+│   ── pubsub.proto       # Protobuf-схема сервиса<br>
+│ cmd/<br>
+│   ── client/             # Тестовый клиент(исключительно отладка)<br>
+│   ── server/             # Основной сервер<br>
+│ internal/<br>
+│   ── server/             # gRPC-логика<br>
+│ subpub/                  # Реализация PubSub (задание 1)<br>
+│ custom_errors/           # ошибки <br>
+│ envs/                    # работа с envs <br> 
+│ go.mod<br>
+│ go.sum<br>
+│ .env                   # Пример конфигурации<br>
 
+<h2>Требования</h2>
 <ol>
 <li>Go 1.24</li>
 <li>Утилита protoc</li>
